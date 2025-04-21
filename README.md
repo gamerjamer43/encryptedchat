@@ -52,14 +52,6 @@ A simple encrypted chat application built with Flask, Flask-SocketIO, and RSA en
 
 ---
 
-### Configuration
-
-- **Environment variables** (optional):
-  - `NGROK_AUTH_TOKEN`: Your ngrok auth token for stable tunnels.
-  - `SECRET_KEY`: (Production) You could set a fixed SECRET_KEY to persist sessions across restarts. Not sure if you want to tho.
-
----
-
 ### Usage
 
 #### Running the Server
