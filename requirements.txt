@@ -1,0 +1,7 @@
+Flask
+flask-socketio
+pyngrok
+cryptography
+python-dotenv
+prompt_toolkit
+python-socketio

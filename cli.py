@@ -1,8 +1,16 @@
-import socketio, threading, re
+# ik this is not good practice, i do not care :)
+import re, socketio, threading
+
+# for the encryption. not 100% secure but this is eventually gonna get expanded on
 from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from cryptography.hazmat.primitives import serialization, hashes
-from prompt_toolkit import PromptSession
+
+# for better formatting, avoids
+# > unfinished messa[user]: sent message
+# > ge
 from prompt_toolkit.patch_stdout import patch_stdout
+from prompt_toolkit import PromptSession
+
 
 session = PromptSession()
 sio = socketio.Client()

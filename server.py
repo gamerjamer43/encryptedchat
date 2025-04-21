@@ -1,12 +1,21 @@
+# flask makes it so i can use an ngrok website as a host
 from flask import Flask, request
 from flask_socketio import SocketIO, emit, disconnect
+
+# for the encryption. not 100% secure but this is eventually gonna get expanded on
 from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from cryptography.hazmat.primitives import serialization, hashes
 from pyngrok import ngrok
-import os, threading, warnings
+
+# secret key generation
+from secrets import choice
+from string import ascii_letters, digits
+
+# other imports, bad practice :(
+import os, threading
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '09u7asdn09asnd079sand790sad7832709n848n723n46706n7NB^&*DBN(&*^TDSABN&*(^bn789213b78978b96178bv65asv78das87v59d(*&SBb821)'
+app.config['SECRET_KEY'] = ''.join(choice(ascii_letters + digits) for _ in range(100))
 socketio = SocketIO(app)
 
 clients = {}
